@@ -86,7 +86,7 @@ body::before {
     0 0 0 7px var(--gold-pale),
     0 30px 80px rgba(74,55,40,.18),
     0 8px 24px rgba(176,141,106,.12);
-  width: min(680px, 94vw);
+  width: 680px;
   padding: 56px 60px 48px;
   text-align: center;
   margin: 48px auto;

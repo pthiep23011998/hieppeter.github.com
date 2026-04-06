@@ -1,4 +1,27 @@
 // ============================
+// Auto Scale (viewport fit)
+// ============================
+(function () {
+  const BASE_WIDTH = 680; // chiều rộng thiết kế gốc (px)
+
+  function scaleCard() {
+    const card = document.querySelector('.card');
+    if (!card) return;
+    const vw = window.innerWidth;
+    const scale = Math.min(1, (vw * 0.94) / BASE_WIDTH);
+    card.style.transform = `scale(${scale})`;
+    card.style.transformOrigin = 'top center';
+    // Điều chỉnh chiều cao body để không bị scroll thừa
+    const cardH = card.offsetHeight * scale;
+    document.body.style.minHeight = cardH + 96 + 'px';
+  }
+
+  window.addEventListener('resize', scaleCard);
+  window.addEventListener('load', scaleCard);
+  scaleCard();
+})();
+
+// ============================
 // Falling Petals
 // ============================
 (function () {
